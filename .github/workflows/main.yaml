@@ -13,26 +13,22 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 10
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'pnpm'
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
 
       - name: Install Backend Dependencies
         run: |
           cd backend
-          pnpm install --no-frozen-lockfile
+          npm install
 
       - name: Build Backend
         run: |
           cd backend
-          pnpm run build
+          npm run build
 
       - name: Deploy Backend to Vercel
         uses: amondnet/vercel-action@v25
@@ -51,26 +47,22 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 10
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'pnpm'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install Frontend Dependencies
         run: |
           cd frontend
-          pnpm install --no-frozen-lockfile
+          npm install
 
       - name: Build Frontend
         run: |
           cd frontend
-          pnpm run build
+          npm run build
 
       - name: Deploy Frontend to Vercel
         uses: amondnet/vercel-action@v25
