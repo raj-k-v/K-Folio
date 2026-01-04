@@ -1,12 +1,3 @@
-import React from "react";
-import SignUpcard from "./components/Signup_card"; // adjust path if your file is elsewhere
-import "./App.css";
-
-function App() {
-  return (
-    <div>
-      <SignUpcard />
-    </div>
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import LandingPage from "./pages/Landing/LandingPage";
 import "./App.css";

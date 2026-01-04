@@ -1,10 +1,5 @@
 import * as React from "react"
-
-<<<<<<< HEAD
-import { cn } from "../../lib/utils"
-=======
 import { cn } from "@/lib/utils"
->>>>>>> upstream/main
 
 interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
