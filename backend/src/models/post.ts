@@ -71,7 +71,7 @@ commentsCount: {
 
   },
   {
-    timestamps: true, // createdAt, updatedAt
+    timestamps: true,
   }
 );
 
