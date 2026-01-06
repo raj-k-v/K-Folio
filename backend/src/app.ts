@@ -4,6 +4,8 @@ import cors from "cors";
 import authRouter from "./routes/auth";
 import postRouter from "./routes/post";
 
+import userRouter from "./routes/user";
+
 const app = express();
 
 // middleware
@@ -21,5 +23,6 @@ app.get("/", (req: Request, res: Response) => {
 // routes
 app.use("/auth", authRouter);
 app.use("/posts", postRouter);
+app.use("/users", userRouter);
 
 export default app;
